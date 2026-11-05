@@ -3,20 +3,17 @@
 ## 1. Diagrama de Casos de Uso General
 
 ```mermaid
-usecase-beta
-direction LR
+graph LR
+    subgraph Sistema
+        UC1([UC-01: Iniciar Sesión])
+        UC2([UC-02: Consultar Catálogo])
+        UC3([UC-03: Realizar Pedido])
+    end
 
-actor Cliente
-actor Administrador
-
-UC1("UC-01: Iniciar Sesión")
-UC2("UC-02: Consultar Catálogo")
-UC3("UC-03: Realizar Pedido")
-
-Cliente --> UC1
-Cliente --> UC2
-Cliente --> UC3
-Administrador --> UC1
+    Cliente((Cliente)) --> UC1
+    Cliente --> UC2
+    Cliente --> UC3
+    Administrador((Administrador)) --> UC1
 
 
 classDiagram
