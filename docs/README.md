@@ -33,5 +33,5 @@ classDiagram
         +float total
     }
 
-    Usuario "1" -- "*" Pedido : realiza
-    Pedido "*" -- "*" Producto : contiene
+    Usuario --> Pedido : realiza
+    Pedido --> Producto : contiene
