@@ -1,27 +1,23 @@
-# Documentación UML - Módulo del Proyecto
+# Documentación UML - Proyecto Integrador
 
-## Diagrama de Clases
+## 1. Diagrama de Casos de Uso General
 
 ```mermaid
-classDiagram
-    class Usuario {
-        +string nombre
-        +string correo
-        +login()
-    }
+usecase-beta
+direction LR
 
-    class Producto {
-        +string nombre
-        +float precio
-    }
+actor Cliente
+actor Administrador
 
-    class Pedido {
-        +int id
-        +float total
-    }
+UC1("UC-01: Iniciar Sesión")
+UC2("UC-02: Consultar Catálogo")
+UC3("UC-03: Realizar Pedido")
 
-    Usuario "1" -- "*" Pedido : realiza
-    Pedido "*" -- "*" Producto : contiene
+Cliente --> UC1
+Cliente --> UC2
+Cliente --> UC3
+Administrador --> UC1
+
 
 classDiagram
     class Usuario {
