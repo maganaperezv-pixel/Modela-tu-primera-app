@@ -5,17 +5,22 @@
 ```mermaid
 graph LR
     subgraph Sistema
-        UC1([UC-01: Iniciar Sesión])
-        UC2([UC-02: Consultar Catálogo])
-        UC3([UC-03: Realizar Pedido])
+        UC1[UC-01: Iniciar Sesión]
+        UC2[UC-02: Consultar Catálogo]
+        UC3[UC-03: Realizar Pedido]
     end
 
-    Cliente((Cliente)) --> UC1
+    Cliente --> UC1
     Cliente --> UC2
     Cliente --> UC3
-    Administrador((Administrador)) --> UC1
+    Administrador --> UC1
+```
 
+---
 
+## 2. Diagrama de Clases
+
+```mermaid
 classDiagram
     class Usuario {
         +string nombre
@@ -33,5 +38,6 @@ classDiagram
         +float total
     }
 
-    Usuario --> Pedido : realiza
-    Pedido --> Producto : contiene
+    Usuario -- Pedido : realiza
+    Pedido -- Producto : contiene
+```
